@@ -37,7 +37,8 @@ DevOps pipeline for creating development and production deployment using Jenkins
 
 * Here we are creating our first job and telling my job that this is link of my github repository you have to go there and find my code your own.
 * Use branch: dev (For cloning dev branch)
-![development server](./Images/dev_job_1.jpg)
+![development Job](./Images/dev_job_1.jpg)
+![development Job](./Images/dev_job_3.jpg)
 
 * Now Here we are using docker to deploy over server this code will create docker container for us (If not understood try some googling)
 
@@ -55,11 +56,13 @@ fi
 * This Code has to be run by our job then it will create docker conatiner in our local server
 ![development server](./Images/dev_job_2.jpg)
 
+* Now use post job builder which will build next job automatically.
+![development server](./Images/dev_job_4.jpg)
+
 * Now build this job and go to your local server ip and see on port 5000 (Congratulations for your first JOB build)
 
 ## Now the Important Part comes
 
-* We will create job2 that will be manually builded by us after manual testing of developement server
 * Check this setup.
 
 ![Test Job](./Images/test_job_1.jpg)
@@ -70,6 +73,8 @@ fi
 ![Git Hook ](./Images/prod_job.jpg)
 
 * Well that all you have to do. 
+* When previous job runs successfully this job will run and if it runs successfully it will push on master branch.
+* And github will trigger jenkins job for deploying production container.
 
 ## check your development server and prodcution server on port 5000 and 5001
 
@@ -83,7 +88,7 @@ Production server
 # Important Note:
 
 ## Don't Forget to gave jenkins user sudo power 
-## Apply github hook on repository
+## Apply github-hook on repository And enable github trigger on both job (prod and dev deployment)
 
 
 ![Git Hook ](./Images/git_hook.jpg)
