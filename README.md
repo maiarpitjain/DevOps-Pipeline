@@ -20,7 +20,7 @@ DevOps pipeline for creating development and production deployment using Jenkins
 * Configuring server manually consuming too much man power and not efficient
 * Every time new feature developed required to manually deploy on development server where manually testing will be done then again all this setup will manually done on production. overall dev team has to depend on operation team and if any bug reported in testing then this process has to be start again after bug fixing.
 
-## Solution to this problems
+## Solution to these problems
 * We need a job which automatically pulling data whenever developer push to scm(Source code management). After pulling data from scm job should create deployment server, configure it and setup the application automatically.  
 * Job will first configure developemt server and It will waits for approval from management or test tool. (It varies in organizations) After approval it will do same configuration in Production server.
 
@@ -42,14 +42,15 @@ DevOps pipeline for creating development and production deployment using Jenkins
 * Now Here we are using docker to deploy over server this code will create docker container for us (If not understood try some googling)
 
 
-`if sudo docker ps | grep dev1`
-` then`
-` sudo docker rm -f dev1`
-` sudo docker run -itd -p 5000:80 --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4`
-` else`
-` sudo docker run -itd -p 5000:80  --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4`
-` fi`
-
+```
+if sudo docker ps | grep dev1
+then
+sudo docker rm -f dev1
+sudo docker run -itd -p 5000:80 --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4
+else
+sudo docker run -itd -p 5000:80  --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4
+fi
+```
 
 * This Code has to be run by our job then it will create docker conatiner in our local server
 ![development server](./Images/dev_job_2.jpg)
