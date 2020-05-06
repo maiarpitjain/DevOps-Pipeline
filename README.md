@@ -31,3 +31,27 @@ DevOps pipeline for creating development and production deployment using Jenkins
 # Let's Start
 * First We will clone our github repository in our local system
 ![cloning repo](./Images/clone.jpg) 
+
+* Now I am assuming you all know how to use git so i'm skipping branch creation and pushing changes to github.
+* Now let's Jump on Jenkins portal to create our first job. Please install git and github plugin in jenkins (GO TO MANAGE JENKINS AND MANAGE PLUGINS)
+
+* Here we are creating our first job and telling my job that this is link of my github repository you have to go there and find my code your own.
+![development server](./Images/dev_job_1.jpg)
+
+* Now Here we are using docker to deploy over server this code will create docker container for us (If not understood try some googling)
+>if sudo docker ps | grep dev1 
+then
+sudo docker rm -f dev1
+sudo docker run -itd -p 5000:80 --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4
+else
+sudo docker run -itd -p 5000:80  --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4
+fi
+
+* This Code has to be run by our job then it will create docker conatiner in our local server
+![development server](./Images/dev_job_2.jpg)
+
+* Now build this job and go to your local server ip and see on port 5000 (Congratulations for your first JOB build)
+
+## Now the Important Part comes
+
+
