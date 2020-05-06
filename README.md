@@ -63,12 +63,21 @@ DevOps pipeline for creating development and production deployment using Jenkins
 
 ![Test Job](./Images/test_job_1.jpg)
 
+## Let's create our final job that will pull data from master branch and deploy on production server.
+
+* It will be same as development job only change is branch_name
+![Git Hook ](./Images/prod_job.jpg)
+
 * Well that all you have to do. 
 
 ## check your development server and prodcution server on port 5000 and 5001
 
 ![Developemt server](./Images/dev_server.jpg)
+development server
 ![Production server ](./Images/prod_server.jpg)
+Production server
+
+
 
 # Important Note:
 
@@ -76,4 +85,4 @@ DevOps pipeline for creating development and production deployment using Jenkins
 ## Apply github hook on repository
 
 
-![Git Hook ](./Images/git-hook.jpg)
+![Git Hook ](./Images/git_hook.jpg)
