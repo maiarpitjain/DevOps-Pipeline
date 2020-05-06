@@ -39,13 +39,13 @@ DevOps pipeline for creating development and production deployment using Jenkins
 ![development server](./Images/dev_job_1.jpg)
 
 * Now Here we are using docker to deploy over server this code will create docker container for us (If not understood try some googling)
->if sudo docker ps | grep dev1 
->then
->sudo docker rm -f dev1
->sudo docker run -itd -p 5000:80 --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4
->else
->sudo docker run -itd -p 5000:80  --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4
->fi
+> if sudo docker ps | grep dev1 
+  then
+  sudo docker rm -f dev1
+  sudo docker run -itd -p 5000:80 --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4
+  else
+  sudo docker run -itd -p 5000:80  --name  dev1 -v $PWD:/usr/local/apache2/htdocs httpd:2.4
+  fi
 
 * This Code has to be run by our job then it will create docker conatiner in our local server
 ![development server](./Images/dev_job_2.jpg)
