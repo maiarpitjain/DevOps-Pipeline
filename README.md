@@ -87,3 +87,8 @@ Production server
 
 
 ![Git Hook ](./Images/git_hook.jpg)
+
+
+## Working
+
+* Developer will push code to github then jenkins will automatically pulls data and create development server. Tester will go through the application and test it after approval jenkins job2 will run where dev branch will merge to master branch. Then automatically job3 will be triggered because we have already enabled githooks for push events in github repo.
