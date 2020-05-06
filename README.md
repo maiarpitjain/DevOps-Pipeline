@@ -30,4 +30,4 @@ DevOps pipeline for creating development and production deployment using Jenkins
 
 # Let's Start
 * First We will clone our github repository in our local system
-![cloning repo](./images/clone.jpg) 
+![cloning repo](./Images/clone.jpg) 
